@@ -1,5 +1,7 @@
 
 from flask import Flask, request, jsonify
+import socket
+
 
 app = Flask(__name__)
 
@@ -7,7 +9,10 @@ app = Flask(__name__)
 def name():
     client_ip=request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     server_ip=request.host.split(':')[0]
-    return server_ip + " : " + client_ip
+    host_name = socket.gethostname()
+    host_ip = socket.gethostbyname(host_name)
+
+    return "server_ip: " + server_ip + ",client_ip:" + client_ip +",host_name: " + host_name +",host_ip: "  + host_ip
     #return jsonify({'ip': request.remote_addr}), 200
     #return jsonify({'ip': request.environ['REMOTE_ADDR']}), 200
 
