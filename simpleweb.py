@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 import socket
 import os
+from os import environ
 
 
 app = Flask(__name__)
@@ -11,15 +12,22 @@ app = Flask(__name__)
 def name():
     
     info={}
-    info["client_ip"] = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-    info["server_ip"] = request.host.split(':')[0]
-    info["cont_name"] = socket.gethostname()
-    info["cont_ip"] = socket.gethostbyname(socket.gethostname())
+    info["CLIENT_IP"] = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    info["CONT_NAME"] = socket.gethostname()
+    info["CONT_IP"] = socket.gethostbyname(socket.gethostname())
 
-    info["md_node_name"] = os.environ.get('MD_NODE_NAME') or 'NA'
-    info["md_node_ip"] = os.environ.get('MD_NODE_IP') or 'NA'
-    info["md_pod_name"] = os.environ.get('MD_POD_NAME') or 'NA'
-    info["md_pod_ip"] = os.environ.get('MD_POD_IP') or 'NA'
+    if "MD_NODE_NAME" in os.environ:
+    	info["MD_NODE_NAME"] = os.environ.get('MD_NODE_NAME')
+
+    if "MD_NODE_IP" in os.environ:
+    	info["MD_NODE_IP"] = os.environ.get('MD_NODE_IP')
+
+    if "MD_POD_NAME" in os.environ:
+    	info["MD_POD_NAME"] = os.environ.get('MD_POD_NAME')
+
+    if "MD_POD_IP" in os.environ:
+    	info["MD_POD_IP"] = os.environ.get('MD_POD_IP')
+
 
     #return "server_ip: " + server_ip + ",client_ip:" + client_ip +",host_name: " + host_name +",host_ip: "  + host_ip
     #return "request_host: " + request.host + ",client_ip:" + client_ip + ",container_hostname: " + host_name +",container_ip: "  + host_ip
