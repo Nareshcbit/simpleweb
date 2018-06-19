@@ -12,7 +12,6 @@ app = Flask(__name__)
 def name():
     
     info={}
-    info["CLIENT_IP"] = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     info["CONT_NAME"] = socket.gethostname()
     info["CONT_IP"] = socket.gethostbyname(socket.gethostname())
 
