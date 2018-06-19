@@ -13,7 +13,7 @@ def name():
     host_ip = socket.gethostbyname(host_name)
 
     #return "server_ip: " + server_ip + ",client_ip:" + client_ip +",host_name: " + host_name +",host_ip: "  + host_ip
-    return "request_host: " + request.host ",container_hostname: " + host_name +",container_ip: "  + host_ip
+    return "request_host: " + request.host + ",container_hostname: " + host_name +",container_ip: "  + host_ip
     #return jsonify({'ip': request.remote_addr}), 200
     #return jsonify({'ip': request.environ['REMOTE_ADDR']}), 200
 
