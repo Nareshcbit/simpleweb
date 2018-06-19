@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: sampleweb-dep
+  name: sampleweb_dep
 spec:
    replicas: 2
    template:
