@@ -6,9 +6,10 @@ metadata:
 spec:
   replicas: 2
   spec:
-    containers:
-      - name: simplewebpd
-        image: nxgcloud/simpleweb:0.0.1
-        ports:
-          - containerPort: 5000
-        command: ["python", "/webapp/simpleweb.py"]
+    template:
+      containers:
+        - name: simplewebpd
+          image: nxgcloud/simpleweb:0.0.1
+          ports:
+            - containerPort: 5000
+          command: ["python", "/webapp/simpleweb.py"]
