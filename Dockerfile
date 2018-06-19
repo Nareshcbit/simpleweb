@@ -8,6 +8,6 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r /webapp/requireme
 
 COPY . /webapp
 
-EXPOSE 80
+EXPOSE 5000
 
 CMD [ "python", "/webapp/simpleweb.py" ]
