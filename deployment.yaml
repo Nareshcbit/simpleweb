@@ -2,15 +2,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: samplewebdep
+  name: simplewebdp
 spec:
-   replicas: 2
-   template:
-     spec:
-       containers:
-        - name: web-container
-          image: nxgcloud/simpleweb:0.0.1
-          ports:
-            - containerPort: 5000
-          command: [ "python", "/webapp/simpleweb.py"]
-
+  replicas: 2
+  spec:
+    containers:
+      - name: simplewebpd
+        image: nxgcloud/simpleweb:0.0.1
+        ports:
+          - containerPort: 5000
+        command: ["python", "/webapp/simpleweb.py"]
