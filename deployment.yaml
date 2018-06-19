@@ -29,4 +29,3 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.hostIP
-      restartPolicy: Never
