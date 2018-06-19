@@ -3,31 +3,14 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: sampleweb-dep
-  spec:
-    replicas: 2
-    template:
-      spec:
-        containers:
-            - name: web-container
-              image: nxgcloud/simpleweb:0.0.1
-              ports:
-                - containerPort: 5000
-              command: [ "python", "/webapp/simpleweb.py"]
-              env:
-                - name: MD_NODE_NAME
-                  valueFrom:
-                    fieldRef:
-                      fieldPath: spec.nodeName
-                - name: MD_POD_NAME
-                  valueFrom:
-                    fieldRef:
-                      fieldPath: metadata.name
-                - name: MD_POD_IP
-                  valueFrom:
-                    fieldRef:
-                      fieldPath: status.podIP
-                - name: MD_NODE_IP
-                  valueFrom:
-                    fieldRef:
-                      fieldPath: status.hostIP
-        restartPolicy: Never
+spec:
+   replicas: 2
+   template:
+     spec:
+       containers:
+        - name: web-container
+          image: nxgcloud/simpleweb:0.0.1
+          ports:
+            - containerPort: 5000
+          command: [ "python", "/webapp/simpleweb.py"]
+
