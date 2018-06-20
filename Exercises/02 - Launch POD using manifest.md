@@ -21,6 +21,8 @@ kubectl describe pod simple | grep IP:
 curl http://10.233.122.139:5000
 #Question? is output different from what we got in exercise1? see simpleweb.py 
 
+#Connect to Pod
+
 
 #Delete pod
 kubectl delete pod simpleweb
