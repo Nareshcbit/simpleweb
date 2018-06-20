@@ -1,1 +1,13 @@
-service-clusterip.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicecip
+spec:
+  selector:
+    serviceName: mySimpleService
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 5000
+      targetPort: 5000
+      protocol: TCP
