@@ -10,19 +10,19 @@ spec:
         - containerPort: 5000
       command: [ "python", "/webapp/simpleweb.py"]
       env:
-        - name: MD_NODE_NAME
+        - name: MY_NODE_NAME
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
-        - name: MD_POD_NAME
+        - name: MY_POD_NAME
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
-        - name: MD_POD_IP
+        - name: MY_POD_IP
           valueFrom:
             fieldRef:
               fieldPath: status.podIP
-        - name: MD_NODE_IP
+        - name: MY_NODE_IP
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP

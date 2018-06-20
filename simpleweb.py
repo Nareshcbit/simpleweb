@@ -15,17 +15,17 @@ def name():
     info["CONT_NAME"] = socket.gethostname()
     info["CONT_IP"] = socket.gethostbyname(socket.gethostname())
 
-    if "MD_NODE_NAME" in os.environ:
-    	info["MD_NODE_NAME"] = os.environ.get('MD_NODE_NAME')
+    if "MY_NODE_NAME" in os.environ:
+    	info["MY_NODE_NAME"] = os.environ.get('MY_NODE_NAME')
 
-    if "MD_NODE_IP" in os.environ:
-    	info["MD_NODE_IP"] = os.environ.get('MD_NODE_IP')
+    if "MY_NODE_IP" in os.environ:
+    	info["MY_NODE_IP"] = os.environ.get('MY_NODE_IP')
 
-    if "MD_POD_NAME" in os.environ:
-    	info["MD_POD_NAME"] = os.environ.get('MD_POD_NAME')
+    if "MY_POD_NAME" in os.environ:
+    	info["MY_POD_NAME"] = os.environ.get('MY_POD_NAME')
 
-    if "MD_POD_IP" in os.environ:
-    	info["MD_POD_IP"] = os.environ.get('MD_POD_IP')
+    if "MY_POD_IP" in os.environ:
+    	info["MY_POD_IP"] = os.environ.get('MY_POD_IP')
 
 
     #return "server_ip: " + server_ip + ",client_ip:" + client_ip +",host_name: " + host_name +",host_ip: "  + host_ip
