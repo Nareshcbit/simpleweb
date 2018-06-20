@@ -19,7 +19,7 @@ spec:
         image: nxgcloud/simpleweb:0.0.2
         ports:
         - containerPort: 5000
-        command: [ "python", "/webapp/webb.py"]
+        command: [ "python", "/webapp/simpleweb.py"]
         env:
           - name: MY_NODE_NAME
             valueFrom:
