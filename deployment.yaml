@@ -5,7 +5,7 @@ metadata:
   labels:
     app: simpleweb
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: simpleweb
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simpleweb
-        image: nxgcloud/simpleweb:0.0.2
+        image: nxgcloud/simpleweb:0.0.1
         ports:
         - containerPort: 5000
         command: [ "python", "/webapp/simpleweb.py"]
