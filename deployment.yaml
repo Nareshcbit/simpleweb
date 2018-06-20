@@ -17,7 +17,7 @@ spec:
       containers:
       - name: simpleweb
         image: nxgcloud/simpleweb:0.0.1
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         command: [ "python", "/webapp/simpleweb.py"]
-        
