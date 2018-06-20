@@ -1,4 +1,4 @@
-04 - Access web application through Service
+04 - Access web application through Services
 
 #Launch Service
 kubectl create -f simpleservice.yaml

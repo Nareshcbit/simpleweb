@@ -1,7 +1,7 @@
 Exercise 1 Launch POD Without POD Manifest
 
 #Launch a Deployment
-kubectl run webpod01 --image=nxgcloud/simpleweb:0.0.1 --port=5000
+kubectl run webpod01 --image=nxgcloud/simpleweb:0.0.2
 
 #Get the list of deployments
 kubectl get deployments
