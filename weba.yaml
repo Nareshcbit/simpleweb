@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: weba
+        serviceName: mySimpleService
     spec:
       containers:
       - name: weba
