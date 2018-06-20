@@ -12,8 +12,6 @@ kubectl get pods
 
 #Delete the Pod ( not deployment)
 kubectl delete pod simpleweb-deployment-7c799f5769-tts4g
-
-#Wait for few seconds and run
 kubectl get pods
 #can you see deployment created a new pod to maintain number of replicaes
 
@@ -21,4 +19,10 @@ kubectl get pods
 #Update replicas ( either increase or decrease)
 #Update the deployment
 kubectl replace -f deployment.yaml
+kubectl get pods
+
+#Delete the deployment
+kubectl delete -f deployment.yaml
+kubectl get deployments
+kubectl get pods
 

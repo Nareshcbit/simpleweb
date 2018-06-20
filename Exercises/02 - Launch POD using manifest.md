@@ -22,7 +22,8 @@ curl http://10.233.122.139:5000
 #Question? is output different from what we got in exercise1? see simpleweb.py 
 
 #Connect to Pod
-
+kubectl exec -it simpleweb -- /bin/bash
 
 #Delete pod
 kubectl delete pod simpleweb
+kubectl delete -f pod.yaml

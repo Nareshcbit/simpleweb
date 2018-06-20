@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webb-deployment
+  labels:
+    app: webb
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webb
+  template:
+    metadata:
+      labels:
+        app: webb
+    spec:
+      containers:
+      - name: webb
+        image: nxgcloud/simpleweb:0.0.2
+        ports:
+        - containerPort: 5000
+        command: [ "python", "/webapp/webb.py"]
+        env:
+          - name: MY_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: MY_NODE_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
+
