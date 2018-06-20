@@ -5,10 +5,9 @@ metadata:
 spec:
   selector:
     app: weba
-  type: NodePort
+  type: ClusterIP
   ports:
     - name: http
       port: 5000
       targetPort: 5000
-      nodePort: 30080
       protocol: TCP
