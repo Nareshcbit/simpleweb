@@ -10,7 +10,13 @@ kubectl get deployments -o wide
 #Get the list of pods
 kubectl get pods
 
-#Delete the Pod ( not deployment)
+#Scaleup; Dont delete the existing instance
+kubectl apply -f deployment.yaml
+
+#Rollout new changes; replace the old instances with new instances
+
+
+#Avaialability:Delete the Pod ( not deployment)
 kubectl delete pod simpleweb-deployment-7c799f5769-tts4g
 kubectl get pods
 #can you see deployment created a new pod to maintain number of replicaes
