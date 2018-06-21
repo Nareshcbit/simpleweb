@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleweb-deployment
+  labels:
+    app: simpleweb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simpleweb
+  template:
+    metadata:
+      labels:
+        app: simpleweb
+    spec:
+      containers:
+      - name: simpleweb
+        image: nxgcloud/simpleweb:0.0.1
+        ports:
+        - containerPort: 5000
+        command: [ "python", "/webapp/simpleweb.py"]
